@@ -18,4 +18,5 @@ screen -r mysession
 
 docker pull original0124/web-proxy-server:latest
 
-example instruction:   docker run -it --rm -p 9090:9090 original0124/web-proxy-server 9090 4
+example instruction:   docker run -it --rm -p 9090:9090 -e PORT=9090 -e THREADS=4 original0124/web-proxy-server
+
