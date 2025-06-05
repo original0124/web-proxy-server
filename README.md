@@ -114,3 +114,7 @@ After that, you can transfer the .pcap file to Windows using SCP, open it with W
 ```
 scp root@<server IP>:/your/path/nfs.pcap "D:/your/path"
 ```
+View mount point information  
+```
+df -h
+```
