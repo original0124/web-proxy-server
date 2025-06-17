@@ -27,7 +27,22 @@ The compilation method is as follows. Note that the my_cgi.c file should be comp
 gcc -c *.c -I.  
 gcc -o my_server *.o -pthread  
 ```
-
+docker:  
+docker pull  
+docker push  
+docker bulid  
+docker save -o  
+docker load -i  
+docker run  
+docker images  
+docker-compose up  
+docker-compose down  
+docker login  
+docker tag  
+docker ps  
+docker stop  
+docker rmi  
+docker exec -it 容器ID或名字 sh  
   
 An example of the execution method is as follows.  
 
