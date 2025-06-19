@@ -60,62 +60,18 @@ http://"ip or domain name"/index.html
 ```
 
 
-NFS : Network File System to share directories from a remote host for resource synchronization and load balancing.  
 
-The server-side configuration is as follows  
 
-```
-yum install -y rpcbind nfs-utils   
-```
 
-```
-systemctl start rpcbind  
-systemctl enable rpcbind  
-```
-
-```
-rpcinfo -p  
-```
-
-```
-systemctl start nfs-server
-systemctl enable nfs-server
-```
-
-```
-echo '/data/ <IP>(rw)   #In the configuration file, <IP> is granted read and write access to the /data/ directory on the server.' >> /etc/exports
-```
-
-```
-systemctl reload nfs-server  #Reload the configuration file  
-```
-
-```
-mkdir /data #Create a network-shared directory
-cat /etc/passwd #Find the user automatically created by NFS, usually is "nobody"
-```
-
-```
-id nobody #View user identity information  
-```
-
-```
-chown -R nobody.nobody /data  
-```
-
-The client configuration is as follows  
 
 ```
 yum install nfs-utils  
 ```
 
-```
-showmount -e <server IP> #View the shared directories on the server  
-```
 
-```
-mount -t nfs <server IP>:/data/ /mnt/ #Temporarily mount the server’s /data/ directory to local /mnt/  
-```
+showmount -e <server IP> #View the shared directories on the server  
+
+
 
 You might encounter some troublesome issue ， you can use tcpdump to capture packets in the background and append the output to a .pcap file.    
 
